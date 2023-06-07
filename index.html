@@ -1,0 +1,77 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+       <link rel="stylesheet" href="index.css">
+       <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+       <title>Restaurnt Ordering App</title>
+    </head>
+    <body>
+        <header>
+            <div class="header_div">
+                <h1 id="name">Jimmy’s Diner</h1>
+                <h4 id="slogan">The best burgers and pizzas in town.</h4>
+            </div>
+        </header>
+        <main>
+            <div id="main_div">
+            <!-- food items here -->    
+            </div>
+            <div class="order_container" id="order_container">
+                <h2 id="order_header">Your order</h2>
+                <div id="order_div"></div>
+                    <div id="order-items"></div>
+                <!-- order items here -->
+                <div class="div_border"></div>
+                <div id="total">
+                    <p class="ordered_item"><span class="total_price_span">Total price</span></p>
+                    <p id="total_price"></p>
+                </div>
+                <div class = "button_complete_div">
+                    <button class="complete-btn" id="complete-btn" data-id="complete-btn">Complete Order</button>
+                </div>
+            </div>
+        </main>
+        <!-- modal window -->
+        <form class="modal" id="modal">
+            <span class="x_cancel_order">x</span>
+            <h2 class="card-details-header">Enter Card Details</h2>
+            <input 
+            id="full-name" 
+            type="text" 
+            name="fullName" 
+            placeholder="Enter your name"
+            onkeydown="return /[a-z]/i.test(event.key)" 
+            required/>
+            <input 
+            id="ccn" 
+            type="tel" 
+            inputmode="numeric" 
+            pattern="[0-9]{10}"
+            autocomplete="cc-number" 
+            minlength="10"
+            maxlength="10" 
+            placeholder="0912345678"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+            required/>
+            <input 
+            id="ccv" 
+            type="tel" 
+            inputmode="numeric" 
+            pattern="[0-9]{3}" 
+            autocomplete="ccv" 
+            minlength= "3"
+            maxlength= "3"
+            placeholder="cvv"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            required/>
+            <button type="submit" id="pay_btn" data-pay="pay_btn">Pay</button>  
+        </form>
+        
+        <!-- ending sentence -->
+        <div class="outgoing-msg-div">
+            <h2 class="outgoing-msg" id="outgoing-msg">Thank you! Your order is on its way</h2>
+        </div>
+	<script src="index.js" type="module"></script>
+    </body>
+</html>
+
